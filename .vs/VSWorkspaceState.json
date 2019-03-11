@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BrainWork"
+    "\\BrainWork",
+    "\\BrainWork\\BrainWork",
+    "\\BrainWork\\BrainWork\\Controllers"
   ],
   "SelectedNode": "\\BrainWork\\BrainWork.sln",
   "PreviewInSolutionExplorer": false
