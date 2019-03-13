@@ -36,6 +36,7 @@ import { CreateFormComponent } from './create-form/create-form.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'create-form', component: CreateFormComponent },
     ])
+
   ],
   providers: [],
   bootstrap: [AppComponent]
