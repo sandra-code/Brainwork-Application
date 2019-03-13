@@ -48,8 +48,8 @@ export class CreateFormComponent implements OnInit {
     return this.formGroup.get('titleName') as FormControl
   }
 
-  onSubmit() {
-    console.log(this.titleName);
+  onSubmit(formValues) {
+    console.log(formValues);
   }
 
 }

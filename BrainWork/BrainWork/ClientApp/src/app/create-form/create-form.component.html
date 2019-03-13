@@ -7,23 +7,26 @@
         {{ titleAlert }}
       </mat-error>
     </mat-form-field>
-
-    <mat-form-field class="form-element">
-      <input matInput placeholder="Term" formControlName="term">
-      <mat-error *ngIf="!formGroup.controls['term'].valid && formGroup.controls['term'].touched">
-        Required field.
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field class="form-element">
-      <input matInput placeholder="Definition" formControlName="definition">
-      <mat-error *ngIf="!formGroup.controls['definition'].valid && formGroup.controls['definition'].touched">
-        Required field.
-      </mat-error>
-    </mat-form-field>
-
-    <div class="form-element">
-      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Create</button>
+    <div class="formSideBySide">
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Term" formControlName="term">
+        <mat-error *ngIf="!formGroup.controls['term'].valid && formGroup.controls['term'].touched">
+          Required field.
+        </mat-error>
+      </mat-form-field>
     </div>
+    <div class="formSideBySide">
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Definition" formControlName="definition">
+        <mat-error *ngIf="!formGroup.controls['definition'].valid && formGroup.controls['definition'].touched">
+          Required field.
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+      
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Create</button>
+      </div>
   </form>
 </div>
