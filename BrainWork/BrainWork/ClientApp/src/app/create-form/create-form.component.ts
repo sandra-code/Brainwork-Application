@@ -49,6 +49,16 @@ export class CreateFormComponent implements OnInit {
 
   onSubmit(formValues) {
     console.log(formValues);
+    //takes all pairs and makes a array/list of them
   }
 
+  addRow() {
+    //takes term and definiton from the form and makes a pair
+    console.log("add row test");
+  }
+
+  removeRow() {
+    //takes term and definiton from the form and makes a pair
+    console.log("remove row test");
+  }
 }
