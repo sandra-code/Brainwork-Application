@@ -3,8 +3,10 @@
     "",
     "\\BrainWork",
     "\\BrainWork\\BrainWork",
+    "\\BrainWork\\BrainWork\\ClientApp",
+    "\\BrainWork\\BrainWork\\ClientApp\\src",
+    "\\BrainWork\\BrainWork\\ClientApp\\src\\app",
     "\\BrainWork\\BrainWork\\Controllers"
   ],
-  "SelectedNode": "\\BrainWork\\BrainWork.sln",
   "PreviewInSolutionExplorer": false
 }
