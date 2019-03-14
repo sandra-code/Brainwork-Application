@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-create-form',
   templateUrl: './create-form.component.html',
@@ -48,8 +47,18 @@ export class CreateFormComponent implements OnInit {
     return this.formGroup.get('titleName') as FormControl
   }
 
-  onSubmit() {
-    console.log(this.titleName);
+  onSubmit(formValues) {
+    console.log(formValues);
+    //takes all pairs and makes a array/list of them
   }
 
+  addRow() {
+    //takes term and definiton from the form and makes a pair
+    console.log("add row test");
+  }
+
+  removeRow() {
+    //takes term and definiton from the form and makes a pair
+    console.log("remove row test");
+  }
 }
