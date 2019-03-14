@@ -25,11 +25,7 @@
            mdbInput>
   </form>
 </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/counter"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-education'></span> Counter
-              </a>
-            </li>
+            
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-th-list'></span> Fetch data
@@ -39,6 +35,13 @@
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/create-form"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-plus-sign'></span> Create
+
+              </a>
+            </li>
+
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/study"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-apple'></span> Study
 
               </a>
             </li>
