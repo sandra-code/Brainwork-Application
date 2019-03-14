@@ -20,10 +20,12 @@
 }
 
 .button {
-  width: 100%;
+  width: 50px;
 }
 
 .formSideBySide {
   float: left;
-  margin-right: 10%
+  margin-right: 10%;
 }
+
+

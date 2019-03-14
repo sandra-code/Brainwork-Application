@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -21,7 +20,7 @@ import { CreateFormComponent } from './create-form/create-form.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CreateFormComponent
+    CreateFormComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
