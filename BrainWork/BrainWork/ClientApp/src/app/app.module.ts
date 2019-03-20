@@ -13,6 +13,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { StudyComponent } from './study/study.component';
+import { SetsListComponent } from './sets-list/sets-list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StudyComponent } from './study/study.component';
     FetchDataComponent,
     CreateFormComponent,
     StudyComponent,
+    SetsListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { StudyComponent } from './study/study.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'create-form', component: CreateFormComponent },
       { path: 'study', component: StudyComponent },
+      { path: 'sets-list', component: SetsListComponent },
     ])
 
   ],
