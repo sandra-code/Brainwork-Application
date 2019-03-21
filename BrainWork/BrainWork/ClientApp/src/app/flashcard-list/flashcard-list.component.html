@@ -1,0 +1,16 @@
+<h1>Set</h1>
+<!--siia tuleb title input-->
+<div>
+  <input #term placeholder="term" />
+  <input #definition placeholder="definition" />
+  <button (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value=''">Add</button>
+
+  <table>
+    <tr *ngFor="let flashcard of set" style="margin-bottom: 10px;">
+      <td>{{flashcard.flashcard}}</td>
+      <td><button (click)="removeFlashcard(flashcard)">Delete</button></td>
+    </tr>
+  </table>
+
+  <!--<button (click)="createSet(title)">Create</button>-->
+</div>

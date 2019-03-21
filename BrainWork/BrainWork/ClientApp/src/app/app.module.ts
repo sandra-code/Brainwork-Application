@@ -11,9 +11,10 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { CreateFormComponent } from './create-form/create-form.component';
+import { SetComponent } from './set/set.component';
 import { StudyComponent } from './study/study.component';
 import { SetsListComponent } from './sets-list/sets-list.component';
+import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { SetsListComponent } from './sets-list/sets-list.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CreateFormComponent,
+    SetComponent,
     StudyComponent,
     SetsListComponent,
+    FlashcardListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,9 +38,10 @@ import { SetsListComponent } from './sets-list/sets-list.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'create-form', component: CreateFormComponent },
+      { path: 'set', component: SetComponent },
       { path: 'study', component: StudyComponent },
       { path: 'sets-list', component: SetsListComponent },
+      { path: 'flashcard-list', component: FlashcardListComponent },
     ])
 
   ],
