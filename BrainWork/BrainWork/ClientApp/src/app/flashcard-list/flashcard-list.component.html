@@ -8,8 +8,8 @@
   <button (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value=''">Add</button>
 
   <table>
-    <tr *ngFor="let flashcard of set" style="margin-bottom: 10px;">
-      <td>{{flashcard.term}}{{flashcard.definiton}}</td>
+    <tr *ngFor="let flashcard of set; let i=index" style="margin-bottom: 10px;">
+      <td>{{ i+1 }} {{flashcard.term}} {{flashcard.definition}}</td>
       <td><button (click)="removeFlashcard(flashcard)">Delete</button></td>
     </tr>
   </table>

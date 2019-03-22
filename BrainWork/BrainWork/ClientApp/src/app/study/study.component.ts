@@ -7,20 +7,10 @@ import {Flashcard } from "../models/Flashcard";
   styleUrls: ['./study.component.css']
 })
 export class StudyComponent implements OnInit {
-  //set: Flashcard[];
 
 
   constructor() { }
   ngOnInit() {
-    //this.set = [
-    //  {
-    //    term: 'der Apfel',
-    //    definition: 'õun'
-    //  },
-    //  {
-    //    term: 'die Traube',
-    //    definition: 'viinamari'
-    //  }]
   }
 
 

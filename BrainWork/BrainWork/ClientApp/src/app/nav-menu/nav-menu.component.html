@@ -40,11 +40,20 @@
             </li>
 
             <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/flashcard-list"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-plus-sign'></span> Create Set
+
+              </a>
+            </li>
+
+            <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/study"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-apple'></span> Study
 
               </a>
             </li>
+
+
 
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/sets-list"]' (click)='collapse()'>
