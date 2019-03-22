@@ -1,5 +1,7 @@
 <h1>Set</h1>
-<!--siia tuleb title input-->
+
+<input #title />
+
 <div>
   <input #term placeholder="term" />
   <input #definition placeholder="definition" />
@@ -7,10 +9,10 @@
 
   <table>
     <tr *ngFor="let flashcard of set" style="margin-bottom: 10px;">
-      <td>{{flashcard.flashcard}}</td>
+      <td>{{flashcard.term}}{{flashcard.definiton}}</td>
       <td><button (click)="removeFlashcard(flashcard)">Delete</button></td>
     </tr>
   </table>
 
-  <!--<button (click)="createSet(title)">Create</button>-->
+  <button (click)="createSet(title.value)">Create</button>
 </div>
