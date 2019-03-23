@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-create-form',
-  templateUrl: './create-form.component.html',
-  styleUrls: ['./create-form.component.css']
+  selector: 'app-set',
+  templateUrl: './set.component.html',
+  styleUrls: ['./set.component.css']
 })
-export class CreateFormComponent implements OnInit {
+export class SetComponent implements OnInit {
+
 
   formGroup: FormGroup;
   titleAlert: string = 'This field is required';
@@ -52,8 +53,7 @@ export class CreateFormComponent implements OnInit {
     //takes all pairs and makes a array/list of them
   }
 
-  addRow() {
-    //takes term and definiton from the form and makes a pair
+  addFlashcard() {
     console.log("add row test");
   }
 

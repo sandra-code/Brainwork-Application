@@ -4,11 +4,30 @@
 </head>
 </html>
 <body>
-  <div class="mainconatiner">
-    <div class="thecard">
-      <div class="thefront">front of card</div>
-      <div class="theback">back of card</div>
-    </div>
+<div class="maincontainer">
+  <div class="thecard">
+    <div class="thefront">front of card</div>
+    <div class="theback">back of card</div>
   </div>
+</div>
+<div class="divtable">
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Term</th>
+        <th>Definition</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let flashcard of flashcards; let i=index">
+      <td>{{ i+1 }}</td>
+      <td>{{ flashcard.term }}</td>
+      <td>{{ flashcard.definition}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
 </body>
 

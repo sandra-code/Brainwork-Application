@@ -1,8 +1,10 @@
 
-.mainconatiner {
+.maincontainer {
   position: relative;
-  width: 250px;
+  width: 500px;
   height: 320px;
+  padding-top: 10px;
+  
 }
 
 .thecard {
@@ -44,4 +46,9 @@
   font-size: 18px;
   font-weight: bold;
   transform: rotateY(180deg);
+}
+
+.divtable {
+  padding-top: 50px;
+  width: 75%;
 }
