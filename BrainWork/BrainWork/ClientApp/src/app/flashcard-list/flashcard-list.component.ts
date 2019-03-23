@@ -17,6 +17,7 @@ export class FlashcardListComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   addFlashcard(term,definition) {

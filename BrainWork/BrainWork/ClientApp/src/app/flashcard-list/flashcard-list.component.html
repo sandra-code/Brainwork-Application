@@ -2,10 +2,27 @@
 
 <input #title />
 
-<div>
-  <input #term placeholder="term" />
-  <input #definition placeholder="definition" />
-  <button (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value=''">Add</button>
+<div class="row">
+
+  <div class="row">
+    <div class="container">
+      <div class="col-3">
+        <input type="text" class="effect-8" #term placeholder="Term">
+        <span class="focus-border">
+          <i></i>
+        </span>
+      </div>
+      <div class="col-3">
+        <input type="text"  class="effect-8" #definition placeholder="Definition">
+        <span class="focus-border">
+          <i></i>
+        </span>
+      </div>
+      <button (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value=''">Add</button>
+
+
+    </div>
+  </div>
 
   <table>
     <tr *ngFor="let flashcard of set; let i=index" style="margin-bottom: 10px;">
@@ -16,3 +33,4 @@
 
   <button (click)="createSet(title.value)">Create</button>
 </div>
+

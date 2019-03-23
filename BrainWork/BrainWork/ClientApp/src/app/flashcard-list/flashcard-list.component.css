@@ -1,0 +1,117 @@
+/*= Reset CSS 
+============= */
+html, body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px "Lato", Arial, sans-serif;
+  min-width: 100%;
+  min-height: 100%;
+  color: #666;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  float: left;
+  width: 100%;
+  padding: 20px 0 50px;
+}
+
+
+/*= Reset CSS End
+================= */
+
+/*= input focus effects css
+=========================== */
+:focus {
+  outline: none;
+}
+
+.col-3 {
+  float: left;
+  width: 27.33%;
+  margin: 40px 3%;
+  position: relative;
+}
+/* necessary to give position: relative to parent. */
+input[type="text"] {
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: black;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+
+}
+
+.effect-8 {
+  border: 1px solid #b0c4de;
+  padding: 7px 14px 9px;
+  transition: 0.4s;
+}
+
+
+  .effect-8 ~ .focus-border:before,
+  .effect-8 ~ .focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3399FF;
+    transition: 0.3s;
+  }
+
+  .effect-8 ~ .focus-border:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+  }
+
+  .effect-8 ~ .focus-border i:before,
+  .effect-8 ~ .focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: #3399FF;
+    transition: 0.4s;
+  }
+
+  .effect-8 ~ .focus-border i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+  }
+
+  .effect-8:focus ~ .focus-border:before,
+  .effect-8:focus ~ .focus-border:after {
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  .effect-8:focus ~ .focus-border i:before,
+  .effect-8:focus ~ .focus-border i:after {
+    height: 100%;
+    transition: 0.4s;
+  }
+
+/*= input focus effects css End
+=============================== */
