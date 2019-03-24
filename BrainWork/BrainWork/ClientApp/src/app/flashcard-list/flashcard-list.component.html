@@ -1,7 +1,7 @@
-<h1>Set</h1>
-
-<input #title />
-
+<div class="col-3">
+  <input class="effect-1" type="text" placeholder="Flashcard set name">
+  <span class="focus-border"></span>
+</div>
 <div class="row">
 
   <div class="row">
@@ -13,24 +13,47 @@
         </span>
       </div>
       <div class="col-3">
-        <input type="text"  class="effect-8" #definition placeholder="Definition">
+        <input type="text" class="effect-8" #definition placeholder="Definition">
         <span class="focus-border">
           <i></i>
         </span>
       </div>
-      <button (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value=''">Add</button>
 
+      <button mat-mini-fab color="primary" (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value='' " type="button" style="margin-right:10px"><mat-icon>add</mat-icon></button>
 
     </div>
   </div>
 
-  <table>
+  <!--<table>
     <tr *ngFor="let flashcard of set; let i=index" style="margin-bottom: 10px;">
       <td>{{ i+1 }} {{flashcard.term}} {{flashcard.definition}}</td>
       <td><button (click)="removeFlashcard(flashcard)">Delete</button></td>
     </tr>
-  </table>
+  </table>-->
 
-  <button (click)="createSet(title.value)">Create</button>
+  <div class="divtable">
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Term</th>
+          <th>Definition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flashcard of set; let i=index" style="margin-bottom: 10px;">
+          <td>{{ i+1 }}</td>
+          <td>{{ flashcard.term }}</td>
+          <td>{{ flashcard.definition}}</td>
+          <td> <button mat-mini-fab color="warn" (click)="removeFlashcard(flashcard)" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <br />
+  <button mdbBtn type="button" color="basic" (click)="createSet(title.value)" mdbWavesEffect>Create</button>
+
+
 </div>
 
