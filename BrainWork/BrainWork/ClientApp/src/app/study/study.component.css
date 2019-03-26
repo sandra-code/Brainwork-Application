@@ -4,20 +4,23 @@
   width: 500px;
   height: 320px;
   padding-top: 10px;
-  
+ 
 }
 
 .thecard {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 
-  .thecard:hover {
+  /*.thecard:hover {
     transform: rotateY(180deg);
-  }
+  }*/
+.flipper {
+  transform: rotateY(180deg);
+}
 
 .thefront {
   position: absolute;
@@ -32,6 +35,8 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+
 
 .theback {
   position: absolute;

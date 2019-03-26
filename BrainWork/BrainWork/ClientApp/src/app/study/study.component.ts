@@ -13,5 +13,10 @@ export class StudyComponent implements OnInit {
   ngOnInit() {
   }
 
+  myFlipFunction() {
+    var myElement = document.getElementById("thecard");
+    myElement.classList.toggle("flipper");
+  }
 
 }
+

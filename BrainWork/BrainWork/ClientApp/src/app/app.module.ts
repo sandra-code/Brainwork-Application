@@ -15,7 +15,7 @@ import { SetComponent } from './set/set.component';
 import { StudyComponent } from './study/study.component';
 import { SetsListComponent } from './sets-list/sets-list.component';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
-
+import { FlipModule } from 'ngx-flip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { FlashcardListComponent } from './flashcard-list/flashcard-list.componen
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    FlipModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
