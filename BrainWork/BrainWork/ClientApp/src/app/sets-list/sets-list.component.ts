@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FlashcardListComponent } from '../flashcard-list/flashcard-list.component';
+import { Set } from '../models/Set';
 
 @Component({
   selector: 'app-sets-list',
@@ -7,9 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetsListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor() {}
+  ngOnInit() {}
 }

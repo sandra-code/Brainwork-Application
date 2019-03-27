@@ -37,7 +37,6 @@ export class FlashcardListComponent implements OnInit {
     this.setsList.push(flashcardSet);
     console.dir(this.setsList[0]);
   }
-  //add to setlist
   
   
 }
