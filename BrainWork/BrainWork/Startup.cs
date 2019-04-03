@@ -1,10 +1,14 @@
-using System;
+﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using BrainWork.Models;
+using BrainWork.Data;
+using Microsoft.Extensions.Logging;
 
 namespace BrainWork
 {
@@ -17,6 +21,26 @@ namespace BrainWork
 
         public IConfiguration Configuration { get; }
 
+        public static void Initialize(IServiceProvider service)
+        {
+            using (var serviceScope = service.CreateScope())
+            {
+                var scopeServiceProvider = serviceScope.ServiceProvider;
+                try
+                {
+                    var context = scopeServiceProvider.GetService<BrainWorkContext>();
+                    DbInitializer.Initialize(context);
+                }
+                catch (Exception ex)
+                {
+                    var logger = scopeServiceProvider.GetService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occured while seeding the db.");
+                }
+                
+            }
+        }
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -27,11 +51,16 @@ namespace BrainWork
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<BrainWorkContext>(options =>
+                    options.UseInMemoryDatabase(Configuration.GetConnectionString("BrainWorkContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            Initialize(app.ApplicationServices);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

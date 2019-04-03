@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FlashcardListComponent } from '../flashcard-list/flashcard-list.component';
-import { Set } from '../models/Set';
+import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
+import { MatTableDataSource, MatSort } from '@angular/material';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sets-list',
@@ -8,7 +8,25 @@ import { Set } from '../models/Set';
   styleUrls: ['./sets-list.component.css']
 })
 export class SetsListComponent implements OnInit {
+  displayedColumns: string[] = ['title'];
+  dataSource: MatTableDataSource<YourStudySet>;
+  @ViewChild(MatSort) sort: MatSort;
+  baseUrl: string;
 
-  constructor() {}
-  ngOnInit() {}
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+  ngOnInit() {
+    this.http.get<YourStudySet[]>(this.baseUrl + 'api/YourStudySets').subscribe(result => {
+      this.dataSource = new MatTableDataSource<YourStudySet>(result);
+      this.dataSource.sort = this.sort;
+    }, error => console.error(error));
+  }
+  
 }
+
+interface YourStudySet {
+  id: number;
+  title: string;
+}
+

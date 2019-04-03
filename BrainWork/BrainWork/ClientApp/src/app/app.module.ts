@@ -16,6 +16,7 @@ import { StudyComponent } from './study/study.component';
 import { SetsListComponent } from './sets-list/sets-list.component';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 import { FlipModule } from 'ngx-flip';
+
 @NgModule({
   declarations: [
     AppComponent,
