@@ -42,13 +42,12 @@ export class FlashcardListComponent implements OnInit {
   }
 
   createSet(title) {
-    
     let flashcardSet = new Set(title, this.set);
     this.setsList.push(flashcardSet);
 
     this.http.post(this.baseUrl + 'api/YourStudySets',
       {
-        "title": title
+        "title": title,
       }).subscribe(
         (val) => {
           console.log("post call successful", val);

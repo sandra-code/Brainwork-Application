@@ -41,7 +41,7 @@ import { FlipModule } from 'ngx-flip';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'set', component: SetComponent },
-      { path: 'study', component: StudyComponent },
+      { path: 'study/:id', component: StudyComponent },
       { path: 'sets-list', component: SetsListComponent },
       { path: 'flashcard-list', component: FlashcardListComponent },
     ])

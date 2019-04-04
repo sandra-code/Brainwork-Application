@@ -1,4 +1,8 @@
-﻿namespace BrainWork.Models
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace BrainWork.Models
 {
     public class YourStudySet
     {
