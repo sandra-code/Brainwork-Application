@@ -18,7 +18,10 @@ namespace BrainWork.Data
 
             var yourStudySets = new YourStudySet[]
             {
-                new YourStudySet{Title="Ajalugu"}
+                new YourStudySet{Title="Ajalugu"},
+                new YourStudySet{Title="Muusika"},
+                new YourStudySet{Title="Keemia valemid"},
+                new YourStudySet{Title="Geograafia kordamisküsimused"}
             };
 
             foreach (YourStudySet set in yourStudySets)
