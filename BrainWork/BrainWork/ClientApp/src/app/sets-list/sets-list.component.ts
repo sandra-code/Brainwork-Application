@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
+import { Set } from '../flashcard-list/flashcard-list.component';
+
 
 @Component({
   selector: 'app-sets-list',
@@ -21,6 +23,7 @@ export class SetsListComponent implements OnInit {
       this.dataSource = new MatTableDataSource<YourStudySet>(result);
       this.dataSource.sort = this.sort;
     }, error => console.error(error));
+
   }
   
 }
@@ -28,5 +31,6 @@ export class SetsListComponent implements OnInit {
 interface YourStudySet {
   id: number;
   title: string;
+  flashcards: Set[];
 }
 

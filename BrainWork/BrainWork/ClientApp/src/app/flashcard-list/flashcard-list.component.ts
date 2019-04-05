@@ -1,6 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Flashcard } from "../models/Flashcard";
-import { Set } from "../models/Set";
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -48,6 +46,7 @@ export class FlashcardListComponent implements OnInit {
     this.http.post(this.baseUrl + 'api/YourStudySets',
       {
         "title": title,
+        "flashcardSet": flashcardSet
       }).subscribe(
         (val) => {
           console.log("post call successful", val);
@@ -64,7 +63,22 @@ export class FlashcardListComponent implements OnInit {
   }
 }
 
-interface YourStudySet {
-  title: string;
+export class Flashcard {
+  term: string;
+  definition: string;
+
+  constructor(_term, _def) {
+    this.term = _term;
+    this.definition = _def;
+  }
 }
 
+export class Set {
+  title: string;
+  set=[];
+
+  constructor(title, set) {
+    this.title = title;
+    this.set = set;
+  }
+}

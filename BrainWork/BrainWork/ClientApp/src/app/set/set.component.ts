@@ -48,17 +48,5 @@ export class SetComponent implements OnInit {
     return this.formGroup.get('titleName') as FormControl
   }
 
-  onSubmit(formValues) {
-    console.log(formValues);
-    //takes all pairs and makes a array/list of them
-  }
-
-  addFlashcard() {
-    console.log("add row test");
-  }
-
-  removeRow() {
-    //takes term and definiton from the form and makes a pair
-    console.log("remove row test");
-  }
+ 
 }
