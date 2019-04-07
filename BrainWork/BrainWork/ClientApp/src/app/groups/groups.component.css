@@ -1,0 +1,91 @@
+.table {
+  padding-top: 50px;
+  width: 55%;
+}
+.row {
+  float: left;
+  width: 100%;
+  padding: 20px 0 50px;
+}
+.container {
+  padding: 10px;
+}
+.col-3 {
+  float: left;
+  margin: 5px ;
+  position: relative;
+}
+.setsButton {
+  color: black;
+  background-color: #b2d28e;
+  border-radius: 10px 0  10px;
+  font-size: 16px;
+}
+
+  .setsButton:not([disabled]):hover {
+    background-color: rgba(107, 103, 91, 0.96);
+    color: white;
+  }
+.mat-button, .mat-raised-button {
+  background-color: #cbcabd;
+}
+.mat-button:target, .mat-raised-button:target {
+  background-color: #cbcabd;
+}
+button:focus {
+  background-color: #b2d28e;
+}
+
+button:target {
+  background-color: #b2d28e;
+}
+.hidden {
+  display: none;
+}
+.button-test {
+  backface-visibility: hidden;
+  position: relative;
+  width: 500px;
+  height: 80px;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #ffffff;
+  border-width: 1px 1px 1px 1px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: inset 0px 1px 0px #ffffff,0px 1px 3px rgba(0%,0%,0%,0.3);
+  color: #000000;
+  /*font-size: 19px;*/
+  font-family: Helvetica Neue;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0px -1px 0px rgba(16.172060074344753%, 8.099254090294139%, 8.099254090294139%, 0.4);
+ ;
+}
+
+  .button-test > div {
+    color: #999;
+    font-size: 10px;
+    font-family: Helvetica Neue;
+    font-weight: initial;
+    font-style: normal;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    
+  }
+  .button-test > i {
+    font-size: 1em;
+    border-radius: 0px;
+    border: 0px solid transparent;
+    border-width: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    position: static;
+    vertical-align: text-bottom;
+  }
+  .button-test > .ld {
+    font-size: initial;
+    
+  }
