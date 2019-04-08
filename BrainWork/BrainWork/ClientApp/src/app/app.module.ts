@@ -29,7 +29,7 @@ import { GroupsComponent } from './groups/groups.component';
     StudyComponent,
     SetsListComponent,
     FlashcardListComponent,
-    GroupsComponent
+    GroupsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -51,6 +51,6 @@ import { GroupsComponent } from './groups/groups.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

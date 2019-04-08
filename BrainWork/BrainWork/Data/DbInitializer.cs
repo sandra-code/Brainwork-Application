@@ -18,7 +18,7 @@ namespace BrainWork.Data
 
             var yourStudySets = new YourStudySet[]
             {
-                new YourStudySet{Title="Ajalugu", Flashcards=new [] {new Flashcard { Term = "EITÖÖTA", Definition = "100" } }},
+                new YourStudySet{Title="Ajalugu"/*, Flashcards=new [] {new Flashcard { Term = "EITÖÖTA", Definition = "100" } }*/},
                 new YourStudySet{Title="Muusika"},
                 new YourStudySet{Title="Keemia valemid"},
                 new YourStudySet{Title="Geograafia kordamisküsimused"}
