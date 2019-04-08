@@ -17,6 +17,7 @@ import { SetsListComponent } from './sets-list/sets-list.component';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 import { FlipModule } from 'ngx-flip';
 import { GroupsComponent } from './groups/groups.component';
+import { MembersComponent } from './members/members.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { GroupsComponent } from './groups/groups.component';
     SetsListComponent,
     FlashcardListComponent,
     GroupsComponent,
+    MembersComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -47,6 +49,7 @@ import { GroupsComponent } from './groups/groups.component';
       { path: 'sets-list', component: SetsListComponent },
       { path: 'flashcard-list', component: FlashcardListComponent },
       { path: 'groups', component: GroupsComponent },
+      { path: 'members', component: MembersComponent },
     ])
 
   ],
