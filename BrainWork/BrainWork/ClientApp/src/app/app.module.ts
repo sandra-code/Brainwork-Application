@@ -16,6 +16,7 @@ import { StudyComponent } from './study/study.component';
 import { SetsListComponent } from './sets-list/sets-list.component';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 import { FlipModule } from 'ngx-flip';
+import { GroupsComponent } from './groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FlipModule } from 'ngx-flip';
     StudyComponent,
     SetsListComponent,
     FlashcardListComponent,
+    GroupsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,6 +46,7 @@ import { FlipModule } from 'ngx-flip';
       { path: 'study/:id', component: StudyComponent },
       { path: 'sets-list', component: SetsListComponent },
       { path: 'flashcard-list', component: FlashcardListComponent },
+      { path: 'groups', component: GroupsComponent },
     ])
 
   ],
