@@ -46,7 +46,7 @@ export class FlashcardListComponent implements OnInit {
     this.http.post(this.baseUrl + 'api/YourStudySets',
       {
         "title": title,
-        "flashcardSet": flashcardSet
+        "flashcardSet": this.set
       }).subscribe(
         (val) => {
           console.log("post call successful", val);
