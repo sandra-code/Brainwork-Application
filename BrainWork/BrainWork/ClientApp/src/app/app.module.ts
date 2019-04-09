@@ -17,7 +17,8 @@ import { SetsListComponent } from './sets-list/sets-list.component';
 import { FlashcardListComponent } from './flashcard-list/flashcard-list.component';
 import { FlipModule } from 'ngx-flip';
 import { GroupsComponent } from './groups/groups.component';
-import { MembersComponent } from './members/members.component';
+import * as Groupscomponent from "./groups/groups.component";
+import addMemberDialog = Groupscomponent.addMemberDialog;
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MembersComponent } from './members/members.component';
     SetsListComponent,
     FlashcardListComponent,
     GroupsComponent,
-    MembersComponent,
+    addMemberDialog
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -50,11 +52,13 @@ import { MembersComponent } from './members/members.component';
       { path: 'sets-list', component: SetsListComponent },
       { path: 'flashcard-list', component: FlashcardListComponent },
       { path: 'groups', component: GroupsComponent },
-      { path: 'members', component: MembersComponent },
+
     ])
 
   ],
+  entryComponents: [addMemberDialog],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[addMemberDialog]
 })
 export class AppModule { }

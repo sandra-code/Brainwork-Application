@@ -31,11 +31,6 @@ body {
 }
 
 
-/*= Reset CSS End
-================= */
-
-/*= input focus effects css
-=========================== */
 :focus {
   outline: none;
 }
