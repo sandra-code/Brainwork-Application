@@ -13,33 +13,32 @@
 </div>
 
 
-  <div class="row">
-    <div class="container">
-      <div class="col-3">
-        <i class="material-icons"><font size="48">group</font></i>
-      </div>
-      <div class="col-3">
-        <p><font size="6">Grupi nimi</font></p>
-      </div>
-    </div>
-  </div>
-<button  style="background-color: #b2d28e" mat-raised-button color="primary">Sets</button>
-<a href="members"><button style="background-color: #cdddcb" mat-raised-button color="primary">Members</button></a>
-<br/><br />
-<p><font size="4">This group's sets:</font></p>
-
 <div class="row">
   <div class="container">
     <div class="col-3">
-      <a href="sets-list">
+      <i class="material-icons"><font size="48">group</font></i>
+    </div>
+    <div class="col-3">
+      <p><font size="6">Grupi nimi</font></p>
+    </div>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Sets">
+      <p><font size="4">This group's sets:</font></p><br />
+      <div class="col-3">
         <div class="button-test">
           <p style="font-size: 15px">2 terms | kasutajaNimi</p>
           <p style="padding-top: 10px; font-size: 20px">Seti nimi</p><br />
-        </div></a>
-    </div>
-    <div class="col-3">
-      <button target="background-color:red" mat-mini-fab color="warn" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button>
-    </div>
-  </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <button target="background-color:red" mat-mini-fab color="warn" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Members"> Memebers are here </mat-tab>
+  </mat-tab-group>
+
 </div>
+
+
 
