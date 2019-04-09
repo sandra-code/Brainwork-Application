@@ -9,7 +9,7 @@ namespace BrainWork.Models
         public int Id { get; set; }
         public string Title { get; set; }
 
-        public Flashcard[] Flashcards = new Flashcard[] { };
+        public Flashcard[] FlashcardSet= new Flashcard[] { };
 
     }
 }
