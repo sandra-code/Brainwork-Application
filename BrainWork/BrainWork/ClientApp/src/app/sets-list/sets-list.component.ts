@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
-import { Flashcard, Set } from '../flashcard-list/flashcard-list.component';
+import { Flashcard} from '../flashcard-list/flashcard-list.component';
 
 
 @Component({
@@ -31,6 +31,6 @@ export class SetsListComponent implements OnInit {
 interface YourStudySet {
   id: number;
   title: string;
-  flashcardSet: Set[];
+  flashcardSet: Flashcard[];
 }
 

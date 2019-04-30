@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class FlashcardListComponent implements OnInit {
 
   set: Flashcard[];
-  setsList: Set[];
   baseUrl: string;
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,7 +19,6 @@ export class FlashcardListComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.set = [];
-    this.setsList = [];
     this.baseUrl = baseUrl;
   }
 
@@ -40,9 +38,6 @@ export class FlashcardListComponent implements OnInit {
   }
 
   createSet(title) {
-    let flashcardSet = new Set(title, this.set);
-    this.setsList.push(flashcardSet);
-
     this.http.post(this.baseUrl + 'api/YourStudySets',
       {
         "title": title,
@@ -70,15 +65,5 @@ export class Flashcard {
   constructor(_term, _def) {
     this.term = _term;
     this.definition = _def;
-  }
-}
-
-export class Set {
-  title: string;
-  set=[];
-
-  constructor(title, set) {
-    this.title = title;
-    this.set = set;
   }
 }
