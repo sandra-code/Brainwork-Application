@@ -53,7 +53,7 @@ namespace BrainWork
             });
 
             services.AddDbContext<BrainWorkContext>(options =>
-                    options.UseInMemoryDatabase(Configuration.GetConnectionString("BrainWorkContext")));
+                    options.UseInMemoryDatabase("BrainWorkContext"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
