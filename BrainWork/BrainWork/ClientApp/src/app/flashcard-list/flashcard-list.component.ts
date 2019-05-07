@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./flashcard-list.component.css']
 })
 export class FlashcardListComponent implements OnInit {
-
+  postData: YourStudySet;
   set: Flashcard[];
   baseUrl: string;
   httpOptions = {
@@ -20,16 +20,17 @@ export class FlashcardListComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.set = [];
     this.baseUrl = baseUrl;
+    this.postData = new YourStudySet();
   }
 
   ngOnInit() {
-
   }
 
-  addFlashcard(term,definition) {
-    let card = new Flashcard(term,definition);
+  addFlashcard(_term,_definition) {
+    let card = new Flashcard();
+    card.term = _term;
+    card.definition = _definition;
     this.set.push(card);
-   
   }
 
   removeFlashcard(flashcard) {
@@ -37,33 +38,36 @@ export class FlashcardListComponent implements OnInit {
     this.set.splice(index,1);
   }
 
-  createSet(title) {
+  createSet(titleName) {
+    
+    this.postData.title = titleName;
+    this.postData.flashcardSet = this.set;
+
     this.http.post(this.baseUrl + 'api/YourStudySets',
-      {
-        "title": title,
-        "flashcardSet": this.set
-      }).subscribe(
+     this.postData).subscribe(
         (val) => {
           console.log("post call successful", val);
         },
-        response => {
+        response => {                              
           console.log("post call error", response);
         },
         () => {
           console.log("post is completed");
           this.router.navigateByUrl('/sets-list');
-
         }
       );
   }
 }
 
 export class Flashcard {
+  id: number;
   term: string;
   definition: string;
-
-  constructor(_term, _def) {
-    this.term = _term;
-    this.definition = _def;
-  }
 }
+
+export class YourStudySet {
+  id: number;
+  title: string;
+  flashcardSet: Flashcard[];
+}
+

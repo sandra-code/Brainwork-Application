@@ -36,7 +36,7 @@ namespace BrainWork
                     var logger = scopeServiceProvider.GetService<ILogger<Program>>();
                     logger.LogError(ex, "An error occured while seeding the db.");
                 }
-                
+
             }
         }
 
@@ -54,6 +54,7 @@ namespace BrainWork
 
             services.AddDbContext<BrainWorkContext>(options =>
                     options.UseInMemoryDatabase("BrainWorkContext"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

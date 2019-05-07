@@ -13,6 +13,6 @@ namespace BrainWork.Models
         {
         }
 
-        public DbSet<YourStudySet> YourStudySet { get; set; }
+        public DbSet<BrainWork.Models.YourStudySet> YourStudySet { get; set; }
     }
 }

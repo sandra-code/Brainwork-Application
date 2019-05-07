@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,8 +9,9 @@ namespace BrainWork.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-
-        public Flashcard[] FlashcardSet= new Flashcard[] { };
+        //public Flashcard[] FlashcardSet = new Flashcard[] { new Flashcard { Term = "testiterm", Definition = "testidef" } };
+        
+        public IList<Flashcard>  FlashcardSet { get; set; }
 
     }
 }
