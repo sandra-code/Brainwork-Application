@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 export class FlashcardListComponent implements OnInit {
   formGroup: FormGroup;
   titleAlert: string = 'This field is required';
+
   postData: YourStudySet;
   set: Flashcard[];
   baseUrl: string;

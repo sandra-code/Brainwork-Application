@@ -19,6 +19,7 @@ import { FlipModule } from 'ngx-flip';
 import { GroupsComponent } from './groups/groups.component';
 import * as Groupscomponent from "./groups/groups.component";
 import addMemberDialog = Groupscomponent.addMemberDialog;
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 
 @NgModule({
@@ -40,6 +41,8 @@ import addMemberDialog = Groupscomponent.addMemberDialog;
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     MaterialModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,

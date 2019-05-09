@@ -1,8 +1,8 @@
 <div class="container" novalidate>
-  <form [formGroup]="formGroup"(ngSubmit)="addFlashcard(term.value,definition.value)" class="form">
+  <form [formGroup]="formGroup" class="form">
     <mat-form-field>
       <div>
-        <input class="effect-1" #title type="text" placeholder="Enter set title" formControlName="titleName">
+        <input class="effect-1" #title type="text" matInput placeholder="Enter set title" formControlName="titleName">
         <span class="focus-border"></span>
         <mat-error *ngIf="!titleName.valid && titleName.touched">
           {{ titleAlert }}
@@ -15,7 +15,7 @@
           <div class="container">
            
             <div class="col-3">
-              <input type="text" class="effect-2" #term placeholder=" Enter term" formControlName="term">
+              <input type="text" class="effect-2" #term matInput placeholder=" Enter term" formControlName="term">
               <span class="focus-border"></span>
               <mat-error *ngIf="!formGroup.controls['term'].valid && formGroup.controls['term'].touched">
                 Required field.
@@ -24,7 +24,7 @@
             
 
             <div class="col-3">
-              <input type="text" class="effect-2" #definition placeholder="Enter definition"  formControlName="definition">
+              <input type="text" class="effect-2" #definition matInput placeholder="Enter definition"  formControlName="definition">
               <span class="focus-border"></span>
               <mat-error *ngIf="!formGroup.controls['definition'].valid && formGroup.controls['definition'].touched">
                 Required field.
