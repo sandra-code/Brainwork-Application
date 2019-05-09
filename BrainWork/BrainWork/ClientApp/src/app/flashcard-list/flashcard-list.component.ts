@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-flashcard-list',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./flashcard-list.component.css']
 })
 export class FlashcardListComponent implements OnInit {
+  formGroup: FormGroup;
+  titleAlert: string = 'This field is required';
   postData: YourStudySet;
   set: Flashcard[];
   baseUrl: string;
@@ -17,13 +20,42 @@ export class FlashcardListComponent implements OnInit {
     })
   };
 
-  constructor(private router: Router, private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.set = [];
     this.baseUrl = baseUrl;
     this.postData = new YourStudySet();
   }
 
   ngOnInit() {
+    this.createForm();
+    this.setChangeValidate()
+  }
+
+  createForm() {
+    this.formGroup = this.formBuilder.group({
+      'titleName': [null, Validators.required],
+      'term': [null, Validators.required],
+      'definition': [null, Validators.required],
+      'validate': ''
+    });
+  }
+
+  setChangeValidate() {
+    this.formGroup.get('validate').valueChanges.subscribe(
+      (validate) => {
+        if (validate == '1') {
+          this.formGroup.get('titleName').setValidators([Validators.required, Validators.minLength(1)]);
+          this.titleAlert = "You need to specify at least 1 character";
+        } else {
+          this.formGroup.get('titleName').setValidators(Validators.required);
+        }
+        this.formGroup.get('titleName').updateValueAndValidity();
+      }
+    )
+  }
+
+  get titleName() {
+    return this.formGroup.get('titleName') as FormControl
   }
 
   addFlashcard(_term,_definition) {
