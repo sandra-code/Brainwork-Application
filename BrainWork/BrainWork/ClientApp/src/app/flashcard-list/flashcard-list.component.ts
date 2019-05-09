@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -27,9 +27,11 @@ export class FlashcardListComponent implements OnInit {
   ngOnInit() {
 
   }
+  
+ 
 
-  addFlashcard(term,definition) {
-    let card = new Flashcard(term,definition);
+  addFlashcard(term, definition) {
+    let card = new Flashcard(term, definition);
     this.set.push(card);
    
   }
@@ -64,6 +66,7 @@ export class FlashcardListComponent implements OnInit {
 }
 
 export class Flashcard {
+  
   term: string;
   definition: string;
 
@@ -71,7 +74,9 @@ export class Flashcard {
     this.term = _term;
     this.definition = _def;
   }
+
 }
+
 
 export class Set {
   title: string;

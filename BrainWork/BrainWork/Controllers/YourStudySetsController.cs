@@ -19,14 +19,21 @@ namespace BrainWork.Controllers
         {
             _context = context;
         }
-
+        /// <summary>
+         /// Leiab kõik flashcard setid andmebaasist 
+        /// </summary>
+         /// <returns>Settide nimekiri</returns>
         // GET: api/YourStudySets
         [HttpGet]
         public IEnumerable<YourStudySet> GetYourStudySet()
         {
             return _context.YourStudySet;
         }
-
+        /// <summary>
+        /// Leiab kõik flashcard setid andmebaasist id järgi
+        ///  <param name="id">seti id</param>
+        /// </summary>
+        /// <returns>Tagastab ühe seti</returns>
         // GET: api/YourStudySets/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetYourStudySet([FromRoute] int id)
@@ -45,7 +52,12 @@ namespace BrainWork.Controllers
 
             return Ok(yourStudySet);
         }
-
+        /// <summary>
+        /// Seti uuendamine
+        /// </summary>
+        /// <param name="id">seti id</param>
+        /// <param name="yourStudySet">set</param>
+        /// <returns></returns>
         // PUT: api/YourStudySets/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutYourStudySet([FromRoute] int id, [FromBody] YourStudySet yourStudySet)
@@ -80,7 +92,11 @@ namespace BrainWork.Controllers
 
             return NoContent();
         }
-
+        /// <summary>
+        /// Seti lisamine
+        /// </summary>
+        /// <param name="yourStudySet">set</param>
+        /// <returns>Tagastab tehtud seti</returns>
         // POST: api/YourStudySets
         [HttpPost]
         public async Task<IActionResult> PostYourStudySet([FromBody] YourStudySet yourStudySet)
@@ -95,7 +111,11 @@ namespace BrainWork.Controllers
 
             return CreatedAtAction("GetYourStudySet", new { id = yourStudySet.Id }, yourStudySet);
         }
-
+        /// <summary>
+        /// Seti kustutamine
+        /// </summary>
+        /// <param name="id">seti id</param>
+        /// <returns>Kustutab antud id-ga seti</returns>
         // DELETE: api/YourStudySets/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteYourStudySet([FromRoute] int id)
