@@ -3,7 +3,7 @@
     <mat-form-field>
       <div>
         <input class="effect-1" #title type="text" matInput placeholder="Enter set title" formControlName="titleName">
-        <span class="focus-border"></span>
+        
         <mat-error *ngIf="!titleName.valid && titleName.touched">
           {{ titleAlert }}
         </mat-error>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="col-3">
-              <button mat-mini-fab [disabled]="!formGroup.valid" color="primary" (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value='' " type="button" style="margin-right:10px"><mat-icon>add</mat-icon></button>
+              <button mat-mini-fab [disabled]="!formGroup.valid" color="primary" (click)="addFlashcard(term.value,definition.value); term.value=''; definition.value='' " type="submit" style="margin-right:10px"><mat-icon>add</mat-icon></button>
             </div>
           </div>
         </div>

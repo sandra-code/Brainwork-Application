@@ -46,11 +46,16 @@ export class FlashcardListComponent implements OnInit {
       (validate) => {
         if (validate == '1') {
           this.formGroup.get('titleName').setValidators([Validators.required, Validators.minLength(1)]);
+          this.formGroup.get('term').setValidators([Validators.required, Validators.minLength(1)]);
+          this.formGroup.get('definition').setValidators([Validators.required, Validators.minLength(1)]);
           this.titleAlert = "You need to specify at least 1 character";
         } else {
           this.formGroup.get('titleName').setValidators(Validators.required);
+          
         }
+        
         this.formGroup.get('titleName').updateValueAndValidity();
+       
       }
     )
   }
@@ -58,6 +63,7 @@ export class FlashcardListComponent implements OnInit {
   get titleName() {
     return this.formGroup.get('titleName') as FormControl
   }
+  
 
   addFlashcard(_term,_definition) {
     let card = new Flashcard();
