@@ -1,46 +1,62 @@
 <div class="table">
   <table class='table'>
     <thead>
-    <tr>
-      <th>5 sets</th>
-      <th>7 members</th>
-    </tr>
+      <tr>
+        <th>1 set</th>
+        <button mat-mini-fab color="primary" type="button" style="margin-right:5px"><mat-icon>add</mat-icon></button>
+        <th>1 member</th>
+        <button (click)=openDialog(); mat-mini-fab color="primary" type="button" style="margin-right:5px"><mat-icon>add</mat-icon></button>
+      </tr>
     </thead>
-
   </table>
-</div>
+    </div>
+
 
 <div class="row">
-  <div class="row">
-    <div class="container">
-      <div class="col-3">
-        <i class="material-icons"><font size="48">group</font></i>
-      </div>
-      <div class="col-3">
-        <p><font size="6">Grupi nimi</font></p>
-      </div>
+  <div class="container">
+    <div class="col-3">
+      <i class="material-icons"><font size="48">group</font></i>
+    </div>
+    <div class="col-3">
+      <p><font size="6">Grupi nimi</font></p>
     </div>
   </div>
-</div>
 
-<button mat-raised-button color="primary">Sets</button>
-<button mat-raised-button color="primary">Members</button>
-<br/><br />
-<p><font size="4">This group's sets:</font></p>
+  <mat-tab-group>
 
-<div class="row">
-  <div class="row">
-    <div class="container">
-      <div class="col-3">
-        <a href="sets-list">
-          <div class="button-test">
-            <p style="font-size: 15px">2 terms | kasutajaNimi</p>
-            <p style="padding-top: 10px; font-size: 20px">Seti nimi</p><br />
-          </div></a>
-      </div>
+      <mat-tab label="Sets">
+        <p><font size="4">This group's sets:</font></p><br />
+        
+        <div class="col-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-subtitle># terms | kasutjanimi</mat-card-subtitle>
+              <mat-card-title>Seti nimi</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+
+        <div class="col-3">
+          <button target="background-color:red" mat-mini-fab color="warn" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button>
+        </div>
+      </mat-tab>
+
+    <mat-tab label="Members">
+      <p><font size="4">This group's members:</font></p><br />
+         <div class="col-3">
+            <mat-card class="example-card">
+               <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                 <mat-card-title>
+                   {{username}}
+                 </mat-card-title>
+                    <mat-card-subtitle>Group admin</mat-card-subtitle>
+               </mat-card-header>
+            </mat-card>
+         </div>
       <div class="col-3">
         <button target="background-color:red" mat-mini-fab color="warn" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button>
       </div>
-    </div>
-  </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>

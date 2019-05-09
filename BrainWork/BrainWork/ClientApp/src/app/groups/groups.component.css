@@ -26,19 +26,8 @@
   background-color: rgba(107, 103, 91, 0.96);
   color: white;
 }
-.mat-button, .mat-raised-button {
-  background-color: #cbcabd;
-}
-.mat-button:target, .mat-raised-button:target {
-  background-color: #cbcabd;
-}
-button:focus {
-  background-color: #b2d28e;
-}
 
-button:target {
-  background-color: #b2d28e;
-}
+
 .hidden {
   display: none;
 }
@@ -89,3 +78,17 @@ button:target {
   font-size: initial;
     
 }
+p {
+  font-family: Lato;
+}
+
+.example-card {
+  max-width: 350px;
+  margin: 15px
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
