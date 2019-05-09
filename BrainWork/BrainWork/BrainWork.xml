@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BrainWork</name>
+    </assembly>
+    <members>
+        <member name="M:BrainWork.Controllers.YourStudySetsController.GetYourStudySet">
+            <summary>
+            Leiab kõik flashcard setid andmebaasist 
+            </summary>
+            <returns>Settide nimekiri</returns>
+        </member>
+        <member name="M:BrainWork.Controllers.YourStudySetsController.GetYourStudySet(System.Int32)">
+            <summary>
+            Leiab kõik flashcard setid andmebaasist id järgi
+             <param name="id">seti id</param>
+            </summary>
+            <returns>Tagastab ühe seti</returns>
+        </member>
+        <member name="M:BrainWork.Controllers.YourStudySetsController.PutYourStudySet(System.Int32,BrainWork.Models.YourStudySet)">
+            <summary>
+            Seti uuendamine
+            </summary>
+            <param name="id">seti id</param>
+            <param name="yourStudySet">set</param>
+            <returns></returns>
+        </member>
+        <member name="M:BrainWork.Controllers.YourStudySetsController.PostYourStudySet(BrainWork.Models.YourStudySet)">
+            <summary>
+            Seti lisamine
+            </summary>
+            <param name="yourStudySet">set</param>
+            <returns>Tagastab tehtud seti</returns>
+        </member>
+        <member name="M:BrainWork.Controllers.YourStudySetsController.DeleteYourStudySet(System.Int32)">
+            <summary>
+            Seti kustutamine
+            </summary>
+            <param name="id">seti id</param>
+            <returns>Kustutab antud id-ga seti</returns>
+        </member>
+    </members>
+</doc>

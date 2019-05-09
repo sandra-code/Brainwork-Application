@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using BrainWork.Models;
 using BrainWork.Data;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
+using Swashbuckle.AspNetCore.Swagger;
+using System.IO;
 
 namespace BrainWork
 {
@@ -36,7 +39,7 @@ namespace BrainWork
                     var logger = scopeServiceProvider.GetService<ILogger<Program>>();
                     logger.LogError(ex, "An error occured while seeding the db.");
                 }
-
+                
             }
         }
 
@@ -44,6 +47,15 @@ namespace BrainWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Swagger XML Api", Version = "v1", });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.XML";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the Angular files will be served from this directory
@@ -53,13 +65,21 @@ namespace BrainWork
             });
 
             services.AddDbContext<BrainWorkContext>(options =>
-                    options.UseInMemoryDatabase("BrainWorkContext"));
-
+                    options.UseInMemoryDatabase(Configuration.GetConnectionString("BrainWorkContext"))
+            
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger XML Api v1");
+            });
+
             Initialize(app.ApplicationServices);
 
             if (env.IsDevelopment())
