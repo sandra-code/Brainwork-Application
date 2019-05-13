@@ -4,7 +4,7 @@
 </head>
 </html>
 <body>
-
+  <h2>{{setItem.title}}</h2>
 
   <div class="maincontainer">
     <div id="thecard" (click)="myFlipFunction" >
@@ -25,11 +25,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let flashcard of flashcards; let i=index">
+        <tr *ngFor="let flashcard of setItem.flashcardSet; let i=index" style="margin-bottom: 10px;">
           <td>{{ i+1 }}</td>
           <td>{{ flashcard.term }}</td>
           <td>{{ flashcard.definition}}</td>
-        </tr>
+          </tr>
+
       </tbody>
     </table>
   </div>
