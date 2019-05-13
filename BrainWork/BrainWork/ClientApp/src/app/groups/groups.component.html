@@ -2,9 +2,9 @@
   <table class='table'>
     <thead>
       <tr>
-        <th>1 set</th>
+        <th>2 sets</th>
         <button mat-mini-fab color="primary" type="button" style="margin-right:5px"><mat-icon>add</mat-icon></button>
-        <th>1 member</th>
+        <th>2 members</th>
         <button (click)=openDialog(); mat-mini-fab color="primary" type="button" style="margin-right:5px"><mat-icon>add</mat-icon></button>
       </tr>
     </thead>
@@ -18,7 +18,7 @@
       <i class="material-icons"><font size="48">group</font></i>
     </div>
     <div class="col-3">
-      <p><font size="6">Grupi nimi</font></p>
+      <p><font size="6">8.b klass</font></p>
     </div>
   </div>
 
@@ -30,8 +30,18 @@
         <div class="col-3">
           <mat-card class="example-card">
             <mat-card-header>
-              <mat-card-subtitle># terms | kasutjanimi</mat-card-subtitle>
-              <mat-card-title>Seti nimi</mat-card-title>
+              <mat-card-subtitle>5 terms | Mari123</mat-card-subtitle>
+              <mat-card-title>Ajalugu</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div><div class="col-3">
+  <button target="background-color:red" mat-mini-fab color="warn" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button>
+</div>
+        <div class="col-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-subtitle>9 terms | KuuUurija</mat-card-subtitle>
+              <mat-card-title>Keemia</mat-card-title>
             </mat-card-header>
           </mat-card>
         </div>
@@ -43,12 +53,25 @@
 
     <mat-tab label="Members">
       <p><font size="4">This group's members:</font></p><br />
-         <div class="col-3">
+      <div class="col-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+              {{username}}
+            </mat-card-title>
+          </mat-card-header>
+        </mat-card>
+      </div>
+      <div class="col-3">
+        <button target="background-color:red" mat-mini-fab color="warn" type="button" style="margin-right:10px "><mat-icon>clear</mat-icon></button>
+      </div>
+      <div class="col-3">
             <mat-card class="example-card">
                <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                  <mat-card-title>
-                   {{username}}
+                   KuuUurija
                  </mat-card-title>
                     <mat-card-subtitle>Group admin</mat-card-subtitle>
                </mat-card-header>
