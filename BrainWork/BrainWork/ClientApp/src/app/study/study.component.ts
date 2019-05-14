@@ -22,11 +22,7 @@ export class StudyComponent implements OnInit {
     this.http.get<YourStudySet>(this.baseUrl + 'api/YourStudySets/' + id).subscribe(res => this.setItem = res);
     
   }
-
-
-
-
-
+  
   myFlipFunction() {
     var myElement = document.getElementById("thecard");
     myElement.classList.toggle("flipper");

@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
@@ -6,13 +6,17 @@
 <body>
   <h2>{{setItem.title}}</h2>
 
-  <div class="maincontainer">
-    <div id="thecard" (click)="myFlipFunction" >
-
-      <div class="thefront">front of card</div>
-      <div class="theback">back of card</div>
-
+  <div class="card">
+    <div class="card-front">
+      <h2>Vabadussõda<br></h2>
     </div>
+    <div class="card-back">
+      <h2>1918 a<br></h2>
+    </div>
+  </div>
+
+  <div class="maincontainer">
+
   </div>
 
   <div class="divtable">
@@ -29,7 +33,7 @@
           <td>{{ i+1 }}</td>
           <td>{{ flashcard.term }}</td>
           <td>{{ flashcard.definition}}</td>
-          </tr>
+        </tr>
 
       </tbody>
     </table>
