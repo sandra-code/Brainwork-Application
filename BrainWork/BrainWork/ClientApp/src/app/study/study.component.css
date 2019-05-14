@@ -49,17 +49,15 @@
 .card-front {
   height: 100%;
   width: 100%;
-  background-image: url(https://images-na.ssl-images-amazon.com/images/I/41tD3ESqj6L.jpg);
-  background-position: 50% 50%;
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background-color: cornflowerblue;
   backface-visibility: hidden;
   transform: rotateX(0deg);
   transition: 0.5s;
   text-align: center;
+  display: table;
 }
 
 
@@ -69,12 +67,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #bc8f8f;
+  background-color: lightsteelblue;
   backface-visibility: hidden;
   transform: rotateX(180deg);
   transition: 0.5s;
   color: #ffffff;
   text-align: center;
+  display: table;
 }
 
 
@@ -99,4 +98,11 @@
   margin: 5px ;
   position: relative;
   padding-top: 50px;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  
 }
