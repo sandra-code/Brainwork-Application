@@ -27,9 +27,9 @@
 .card {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 200px;
   height: 300px;
-  width: 200px;
+  width: 500px;
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
   perspective: 600px;
@@ -62,6 +62,7 @@
   text-align: center;
 }
 
+
 .card-back {
   height: 100%;
   width: 100%;
@@ -75,28 +76,6 @@
   color: #ffffff;
   text-align: center;
 }
-
-  .card-back h2 {
-    margin: 60% auto 35% auto;
-    font-size: 26px;
-  }
-
-    .card-back h2 span {
-      font-size: 20px;
-    }
-
-  .card-back a {
-    height: 20px;
-    width: 20px;
-    padding: 5px 5px;
-    border-radius: 4px;
-    line-height: 20px;
-  }
-
-    .card-back a:hover {
-      color: #000000;
-      background-color: #fff;
-    }
 
 
 
